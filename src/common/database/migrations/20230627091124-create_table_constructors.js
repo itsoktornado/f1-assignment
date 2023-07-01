@@ -1,39 +1,34 @@
 'use strict';
 
+const { transcode } = require('buffer');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
     return await queryInterface.sequelize.transaction(async (transaction) => {
       await queryInterface.createTable(
-        'constructor_standings',
+        'constructors',
         {
-          constructorStandingsId:{
-            type: Sequelize.DataTypes.NUMBER,
+          constructorId: {
+            type: Sequelize.DataTypes.INTEGER,
+            //autoIncrement: true,
             primaryKey: true
           },
-          raceId: {
-            type: Sequelize.DataTypes.NUMBER,
-            allowNull: false
-          },
-          constructorId: {
-            type: Sequelize.DataTypes.NUMBER,
-            allowNull: false
-          },
-          points: {
-            type: Sequelize.DataTypes.NUMBER,
-            allowNull: false
-          },
-          position: {
-            type: Sequelize.DataTypes.NUMBER,
-            allowNull: false
-          },
-          positionText: {
+          constructorRef: {
             type: Sequelize.DataTypes.STRING,
             allowNull: false
           },
-          wins: {
-            type: Sequelize.DataTypes.NUMBER,
+          name: {
+            type: Sequelize.DataTypes.STRING,
             allowNull: false
+          },
+          nationality: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: false
+          },
+          url: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: true
           }
         },
         {
@@ -45,7 +40,7 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
     return await queryInterface.sequelize.transaction(async (transaction) => {
-      await queryInterface.dropTable('constructor_standings', { transaction })
+      await queryInterface.dropTable('constructors', { transaction })
     })
   }
 };

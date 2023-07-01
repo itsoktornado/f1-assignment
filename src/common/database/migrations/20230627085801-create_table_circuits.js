@@ -8,7 +8,8 @@ module.exports = {
         'circuits',
         {
           circuitId: {
-            type: Sequelize.DataTypes.NUMBER,
+            type: Sequelize.DataTypes.INTEGER,
+            //autoIncrement: true,
             primaryKey: true
           },
           circuitRef: {
@@ -36,7 +37,7 @@ module.exports = {
             allowNull: false
           },
           alt: {
-            type: Sequelize.DataTypes.NUMBER,
+            type: Sequelize.DataTypes.INTEGER,
             allowNull: true
           }
         },
