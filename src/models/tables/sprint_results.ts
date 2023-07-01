@@ -6,7 +6,6 @@ export const SprintResults = sequelize.define(
   {
     resultId: {
       type: DataTypes.INTEGER,
-      //autoIncrement: true,
       primaryKey: true
     },
     raceId: {
