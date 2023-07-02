@@ -7,4 +7,8 @@ export class ConstructorController extends CrudController<typeof constructorServ
     super(constructorService)
   }
   
+  async getListAllConstructor(params: { year: number }) {
+    const result = await this.service.getListAllConstructor(params)
+    return result
+  }
 }

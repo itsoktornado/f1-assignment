@@ -8,7 +8,12 @@ export default class ConstructorRouter extends CrudRouter<typeof constructorCont
     super(constructorController)
   }
   customRouting(): void {
-      
+      this.router.get('/get-result-by-year/:year', this.route(this.getListAllConstructor))
   }
   
+  async getListAllConstructor(req: Request, res: Response) {
+    const year: number = parseInt(req.params.year)
+    const result = await this.controller.getListAllConstructor({ year })
+    this.onSuccess(res, result)
+  }
 }
