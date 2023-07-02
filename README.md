@@ -1,4 +1,15 @@
-# craw-f1
+# F1 Assignment
+
+Finished:
+- Created migration files for the tables
+- Created models
+- Created the foundation for service files
+- Created the foundation for controller files
+- Created the foundation for router files
+
+In Progress:
+- API to get a list of all constructors (in chosen period)
+- API to get a list of all racers 
 
 # How to run server from local
 
