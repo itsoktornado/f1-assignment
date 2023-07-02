@@ -1,3 +1,4 @@
+import { CrudController } from './crudController';
 import { CircuitController } from './crud/circuitController';
 import { ConstructorController } from './crud/constructorController';
 import { ConstructorResultController } from './crud/constructorResultController';
@@ -10,7 +11,6 @@ import { QualifyingController } from './crud/qualifyingController';
 import { RaceController } from './crud/raceController';
 import { ResultController } from './crud/resultController';
 import { SprintResultController } from './crud/sprintResultController';
-import { CrudController } from './crudController';
 
 
 // SECTION
