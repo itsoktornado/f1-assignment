@@ -8,19 +8,28 @@ module.exports = {
         'constructor_results',
         {
           constructorResultsId: {
-            type: Sequelize.DataTypes.NUMBER,
+            type: Sequelize.DataTypes.INTEGER,
+            //autoIncrement: true,
             primaryKey: true
           },
           raceId: {
-            type: Sequelize.DataTypes.NUMBER,
-            allowNull: false
+            type: Sequelize.DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+              model: 'races',
+              key: 'raceId'
+            }
           },
           constructorId: {
-            type: Sequelize.DataTypes.NUMBER,
-            allowNull: false
+            type: Sequelize.DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+              model: 'constructors',
+              key: 'constructorId'
+            }
           },
           points: {
-            type: Sequelize.DataTypes.NUMBER,
+            type: Sequelize.DataTypes.FLOAT,
             allowNull: false
           }
         },
