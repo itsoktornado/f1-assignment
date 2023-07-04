@@ -14,6 +14,9 @@ In Progress:
 Issues:
 - Conflicts with the base code
 
+Note to self:
+- No caps in column names, ever.
+
 # How to run server from local
 
 1. Prepare .env file
