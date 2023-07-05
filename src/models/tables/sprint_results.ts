@@ -4,32 +4,32 @@ import { sequelize, Sequelize } from '../base'
 export const SprintResults = sequelize.define(
   'sprint_results',
   {
-    resultId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true
     },
-    raceId: {
+    race_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'races',
-        key: 'raceId'
+        key: 'id'
       }
     },
-    driverId: {
+    driver_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'drivers',
-        key: 'driverId'
+        key: 'id'
       }
     },
-    constructorId: {
+    constructor_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'constructors',
-        key: 'constructorId'
+        key: 'id'
       }
     },
     number: {
@@ -44,11 +44,11 @@ export const SprintResults = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    positionText: {
+    position_text: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    positionOrder: {
+    position_order: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
@@ -68,20 +68,20 @@ export const SprintResults = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    fastestLap: {
+    fastest_lap: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    fastestLapTime: {
+    fastest_lap_time: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    statusId: {
+    status_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'status',
-        key: 'statusId'
+        key: 'id'
       }
     }
   },

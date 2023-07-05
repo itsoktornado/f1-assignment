@@ -7,7 +7,7 @@ module.exports = {
       await queryInterface.createTable(
         'status',
         {
-          statusId: {
+          id: {
             type: Sequelize.DataTypes.INTEGER,
             //autoIncrement: true,
             primaryKey: true
@@ -15,6 +15,20 @@ module.exports = {
           status: {
             type: Sequelize.DataTypes.STRING,
             allowNull: false
+          },
+          created_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          updated_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          deleted_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: true,
           }
         },
         {

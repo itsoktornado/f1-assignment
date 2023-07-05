@@ -7,33 +7,33 @@ module.exports = {
       await queryInterface.createTable(
         'qualifying',
         {
-          qualifyId: {
+          id: {
             type: Sequelize.DataTypes.INTEGER,
             //autoIncrement: true,
             primaryKey: true
           },
-          raceId: {
+          race_id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'races',
-              key: 'raceId'
+              key: 'id'
             }
           },
-          driverId: {
+          driver_id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'drivers',
-              key: 'driverId'
+              key: 'id'
             }
           },
-          constructorId: {
+          constructor_id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'constructors',
-              key: 'constructorId'
+              key: 'id'
             }
           },
           number: {
@@ -55,6 +55,20 @@ module.exports = {
           q3: {
             type: Sequelize.DataTypes.STRING,
             allowNull: true
+          },
+          created_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          updated_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          deleted_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: true,
           }
         },
         {

@@ -4,7 +4,7 @@ import { sequelize, Sequelize } from '../base'
 export const Races = sequelize.define(
   'races',
   {
-    raceId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true
     },
@@ -16,12 +16,12 @@ export const Races = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    circuitId: {
+    circuit_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'circuits',
-        key: 'circuitId'
+        key: 'id'
       }
     },
     name: {

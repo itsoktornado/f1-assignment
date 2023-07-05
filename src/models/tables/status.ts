@@ -4,7 +4,7 @@ import { sequelize, Sequelize } from '../base'
 export const Status = sequelize.define(
   'status',
   {
-    statusId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true
     },

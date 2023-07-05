@@ -4,25 +4,25 @@ import { sequelize, Sequelize } from '../base'
 export const ConstructorStandings = sequelize.define(
   'constructor_standings',
   {
-    constructorStandingsId: {
+    id: {
       type: DataTypes.INTEGER,
       //autoIncrement: true,
       primaryKey: true
     },
-    raceId: {
+    race_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'races',
-        key: 'raceId'
+        key: 'id'
       }
     },
-    constructorId: {
+    constructor_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'constructors',
-        key: 'constructorId'
+        key: 'id'
       }
     },
     points: {
@@ -33,7 +33,7 @@ export const ConstructorStandings = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    positionText: {
+    position_text: {
       type: DataTypes.STRING,
       allowNull: false
     },

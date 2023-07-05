@@ -7,33 +7,33 @@ module.exports = {
       await queryInterface.createTable(
         'results',
         {
-          resultId: {
+          id: {
             type: Sequelize.DataTypes.INTEGER,
             //autoIncrement: true,
             primaryKey: true
           },
-          raceId: {
+          race_id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'races',
-              key: 'raceId'
+              key: 'id'
             }
           },
-          driverId: {
+          driver_id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'drivers',
-              key: 'driverId'
+              key: 'id'
             }
           },
-          constructorId: {
+          constructor_id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'constructors',
-              key: 'constructorId'
+              key: 'id'
             }
           },
           number: {
@@ -48,11 +48,11 @@ module.exports = {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: true
           },
-          positionText: {
+          position_text: {
             type: Sequelize.DataTypes.STRING,
             allowNull: false
           },
-          positionOrder: {
+          position_order: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false
           },
@@ -72,7 +72,7 @@ module.exports = {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: true
           },
-          fastestLap: {
+          fastest_lap: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: true
           },
@@ -80,21 +80,35 @@ module.exports = {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: true
           },
-          fastestLapTime: {
+          fastest_lap_time: {
             type: Sequelize.DataTypes.STRING,
             allowNull: true
           },
-          fastestLapSpeed: {
+          fastest_lap_speed: {
             type: Sequelize.DataTypes.FLOAT,
             allowNull: true
           },
-          statusId: {
+          id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'status',
-              key: 'statusId'
+              key: 'id'
             }
+          },
+          created_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          updated_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          deleted_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: true,
           }
         },
         {

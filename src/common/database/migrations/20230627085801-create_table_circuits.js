@@ -7,12 +7,12 @@ module.exports = {
       await queryInterface.createTable(
         'circuits',
         {
-          circuitId: {
+          id: {
             type: Sequelize.DataTypes.INTEGER,
             //autoIncrement: true,
             primaryKey: true
           },
-          circuitRef: {
+          circuit_ref: {
             type: Sequelize.DataTypes.STRING,
             allowNull: false
           },
@@ -39,6 +39,19 @@ module.exports = {
           alt: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: true
+          },          created_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          updated_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          deleted_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: true,
           }
         },
         {

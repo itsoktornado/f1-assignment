@@ -4,11 +4,11 @@ import { sequelize, Sequelize } from '../base'
 export const Constructors = sequelize.define(
   'constructors',
   {
-    constructorId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true
     },
-    constructorRef: {
+    constructor_ref: {
       type: DataTypes.STRING,
       allowNull: false
     },
