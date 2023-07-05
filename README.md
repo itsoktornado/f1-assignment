@@ -11,9 +11,6 @@ In Progress:
 - API to get a list of all constructors (in chosen period)
 - API to get a list of all racers
 
-Issues:
-- Conflicts with the base code
-
 Note to self:
 - No caps in column names, ever.
 
