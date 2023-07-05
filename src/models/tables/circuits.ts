@@ -4,11 +4,11 @@ import { sequelize, Sequelize } from '../base'
 export const Circuits = sequelize.define(
   'circuits',
   {
-    circuitId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true
     },
-    circuitRef: {
+    circuit_ref: {
       type: DataTypes.STRING,
       allowNull: false
     },

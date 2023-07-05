@@ -7,20 +7,20 @@ module.exports = {
       await queryInterface.createTable(
         'pit_stops',
         {
-          raceId: {
+          race_id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'races',
-              key: 'raceId'
+              key: 'id'
             }
           },
-          driverId: {
+          driver_id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'drivers',
-              key: 'driverId'
+              key: 'id'
             }
           },
           stop: {
@@ -42,6 +42,20 @@ module.exports = {
           milliseconds: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false
+          },
+          created_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          updated_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          deleted_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: true,
           }
         },
         {

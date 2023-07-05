@@ -7,25 +7,25 @@ module.exports = {
       await queryInterface.createTable(
         'driver_standings',
         {
-          driverStandingsId: {
+          id: {
             type: Sequelize.DataTypes.INTEGER,
             //autoIncrement: true,
             primaryKey: true
           },
-          raceId: {
+          race_id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'races',
-              key: 'raceId'
+              key: 'id'
             }
           },
-          driverId: {
+          driver_id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'drivers',
-              key: 'driverId'
+              key: 'id'
             }
           },
           points: {
@@ -37,7 +37,7 @@ module.exports = {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false
           },
-          positionText: {
+          position_text: {
             type: Sequelize.DataTypes.STRING,
             allowNull: false
           },
@@ -45,6 +45,20 @@ module.exports = {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 0
+          },
+          created_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          updated_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          deleted_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: true,
           }
         },
         {

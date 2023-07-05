@@ -9,12 +9,12 @@ module.exports = {
       await queryInterface.createTable(
         'constructors',
         {
-          constructorId: {
+          id: {
             type: Sequelize.DataTypes.INTEGER,
             //autoIncrement: true,
             primaryKey: true
           },
-          constructorRef: {
+          constructor_ref: {
             type: Sequelize.DataTypes.STRING,
             allowNull: false
           },
@@ -29,6 +29,20 @@ module.exports = {
           url: {
             type: Sequelize.DataTypes.STRING,
             allowNull: true
+          },
+          created_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: true,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          updated_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: true,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          deleted_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: true,
           }
         },
         {

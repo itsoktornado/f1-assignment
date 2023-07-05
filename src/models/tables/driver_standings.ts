@@ -4,24 +4,24 @@ import { sequelize, Sequelize } from '../base'
 export const DriverStandings = sequelize.define(
   'driver_standings',
   {
-    driverStandingsId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true
     },
-    raceId: {
+    race_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'races',
-        key: 'raceId'
+        key: 'id'
       }
     },
-    driverId: {
+    driver_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'drivers',
-        key: 'driverId'
+        key: 'id'
       }
     },
     points: {
@@ -33,7 +33,7 @@ export const DriverStandings = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    positionText: {
+    position_text: {
       type: DataTypes.STRING,
       allowNull: false
     },

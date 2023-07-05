@@ -7,7 +7,7 @@ module.exports = {
       await queryInterface.createTable(
         'races',
         {
-          raceId: {
+          id: {
             type: Sequelize.DataTypes.INTEGER,
             //autoIncrement: true,
             primaryKey: true
@@ -20,12 +20,12 @@ module.exports = {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false
           },
-          circuitId: {
+          circuit_id: {
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
             references: {
               model: 'circuits',
-              key: 'circuitId'
+              key: 'id'
             }
           },
           name: {
@@ -83,6 +83,20 @@ module.exports = {
           sprint_time: {
             type: Sequelize.DataTypes.TIME,
             allowNull: true
+          },
+          created_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          updated_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: false,
+            defaultValue: Sequelize.DataTypes.NOW,
+          },
+          deleted_at: {
+            type: Sequelize.DataTypes.DATE,
+            allowNull: true,
           }
         },
         {

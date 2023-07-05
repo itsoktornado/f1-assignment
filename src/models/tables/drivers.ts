@@ -4,11 +4,11 @@ import { sequelize, Sequelize } from '../base'
 export const Drivers = sequelize.define(
   'drivers',
   {
-    driverId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true
     },
-    driverRef: {
+    driver_ref: {
       type: DataTypes.STRING,
       allowNull: false
     },

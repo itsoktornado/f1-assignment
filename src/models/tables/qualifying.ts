@@ -4,32 +4,32 @@ import { sequelize, Sequelize } from '../base'
 export const Qualifying = sequelize.define(
   'qualifying',
   {
-    qualifyId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true
     },
-    raceId: {
+    race_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'races',
-        key: 'raceId'
+        key: 'id'
       }
     },
-    driverId: {
+    driver_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'drivers',
-        key: 'driverId'
+        key: 'id'
       }
     },
-    constructorId: {
+    constructor_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'constructors',
-        key: 'constructorId'
+        key: 'id'
       }
     },
     number: {

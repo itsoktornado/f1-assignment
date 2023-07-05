@@ -4,24 +4,24 @@ import { sequelize, Sequelize } from '../base'
 export const ConstructorResults = sequelize.define(
   'constructor_results',
   {
-    constructorResultsId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true
     },
-    raceId: {
+    race_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'races',
-        key: 'raceId'
+        key: 'id'
       }
     },
-    constructorId: {
+    constructor_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'constructors',
-        key: 'constructorId'
+        key: 'id'
       }
     },
     points: {
