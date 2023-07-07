@@ -9,18 +9,26 @@ export class ConstructorService extends CrudService<typeof Constructors> {
   }
   
   async getListAllConstructor(params: any, option?: ICrudOption) {
+    const { year } = params
+    console.log(year)
 
-    let result = await Constructors.findAll({
-      include: [{
-        model: Qualifying,
-        include: [{
-          model: Races,
-          where: {
-            "$races.year": params.year
-          }
-        }]
-      }]
+    let result = await Qualifying.findAll({
+      where: {
+        "$QualifyingToRaces.year": year
+      },
+      include: [
+        {
+          association: "QualifyingToConstructors",
+          attributes: []
+        },
+        {
+          association: "QualifyingToRaces",
+          attributes: []
+        }
+      ]
+      
     })
+    console.log(result)
     return result
   }
 }
